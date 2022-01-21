@@ -113,8 +113,20 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 
+  Context API provides a way to share values(props) between components without having to prop drill through every level of the tree. It helps to keep the state clean and is best used when there is global data to be shared with many components or when passing data through intermediate components. In short -- it allows for ease of sharing props with various components.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+  Redux is a state management library that can be used with React (and other languages) to provide a single source of truth for the data(state) in our application. It requires, a store, actions and reducers to be implemented.
+    -Store: where all of the state(data) is stored; it is known as the single source of truth because this is where all the data is kept.
+    -Actions: are objects with 2 properties: type & payload. When an event occurs, an action object from the action creator is sent to the reducer.
+    -Reducers: are pure functions that take in 2 arguments: the current state and the action object. The reducer receives the action object from the action creator and it creates a new state with the action. It passes this new state to the store and the UI is updated.
+    
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
 
+  Redux-thunk allows us to to make asynchronous API calls from action creators. The redux-thunk middleware intercepts action creator data. If it it is an action then the data is forwarded to the reducer. If it is a function, it invokes the thunk and passes the dispatch function in as an argument.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+  My favorite is Redux!! Although it can be confusing to use at first because of the multiple steps to set up, you can clearly see what each of the parts are doing. The state is all in one place and you can easily pass just the pieces that you need for each component. Best of all, there is no more prop drilling and confusion.
