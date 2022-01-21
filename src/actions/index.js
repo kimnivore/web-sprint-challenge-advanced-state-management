@@ -31,9 +31,9 @@ export const addSmurf = (newSmurf) => {
     return({type: ADD_SMURF, payload: newSmurf});
 }
 
-export const ERROR = 'ERROR';
-export const error = (newError) => {
-    return({type:ERROR, payload: newError});
+export const SET_ERROR = 'SET_ERROR';
+export const setError = (newError) => {
+    return({type:SET_ERROR, payload: newError});
 }
 
 

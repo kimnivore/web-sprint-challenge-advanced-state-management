@@ -1,4 +1,4 @@
-import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF, ERROR } from './../actions';
+import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF, SET_ERROR } from './../actions';
 
 export const initialState = {
     smurfs: [
@@ -51,8 +51,8 @@ const reducer = (state = initialState, action) => {
                 isFetching: false,
                 error: ''
             };
-        case ERROR:
-            const newError = 'There is an error.';
+        case SET_ERROR:
+            const newError = 'Please fill out all form inputs.';
             return {
                 ...state,
                 smurfs: {},
