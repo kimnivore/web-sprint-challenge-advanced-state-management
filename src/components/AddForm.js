@@ -19,8 +19,8 @@ const AddForm = ({  error, dispatch }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (state.name === "" || state.position === "" || state.nickname === "") {
-            dispatch(setError(error));
+        if (state.name === "" || state.position === "" || state.nickname === "" || state.description === "") {
+            dispatch(setError({error}));
         } else {
             dispatch(addSmurf(state.name, state.position, state.nickname, state.description));
         }

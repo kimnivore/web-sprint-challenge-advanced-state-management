@@ -1,15 +1,7 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF, SET_ERROR } from './../actions';
 
 export const initialState = {
-    smurfs: [
-        {
-          id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-          name:'Poppa Smurf',
-          position:'Village Leader',
-          nickname: 'Pops',
-          description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
-        }
-      ],
+    smurfs: [],
     isFetching: false,
     error: ''
 };
@@ -33,7 +25,7 @@ const reducer = (state = initialState, action) => {
         case FETCH_FAIL:
             return { 
                 ...state,
-                smurfs: {},
+                smurfs: [],
                 isFetching: false,
                 error: action.payload
             };
@@ -52,12 +44,12 @@ const reducer = (state = initialState, action) => {
                 error: ''
             };
         case SET_ERROR:
-            const newError = 'Please fill out all form inputs.';
+            const errorMessage = 'Name, position, nickname, and description are required.';
             return {
                 ...state,
-                smurfs: {},
+                smurfs: [],
                 isFetching: false,
-                error: newError
+                error: errorMessage
             };
         default:
             return state;

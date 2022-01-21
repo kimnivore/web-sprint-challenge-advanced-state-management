@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
  const SmurfList = ({ smurfs, isFetching }) => {
   
     if (isFetching) {
-        return <h1>{isFetching}</h1>;
+        return <h1>Loading...</h1>;
     }
 
     return(<div className="listContainer">
@@ -19,7 +19,6 @@ const mapStateToProps = (state) => {
     return ({
         smurfs: state.smurfs,
         isFetching: state.isFetching,
-        error: state.error
     })
 }
 export default connect(mapStateToProps)(SmurfList);

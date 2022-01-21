@@ -41,11 +41,6 @@ section {
   padding:0;
 }
 
-.alert .alert-danger{
-  align-items: center;
-  justify-content: center;
-  border: 1px black solid;
-}
 
 @media (max-width: 800px) {
   .flex-container {

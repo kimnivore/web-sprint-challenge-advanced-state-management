@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from "react";
+import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 import { fetchSmurfs } from "./actions";
 
@@ -9,20 +9,12 @@ import AddForm from './components/AddForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-const App = ({ isFetching, error, dispatch })=> {
+const App = ({ dispatch }) => {
 
   useEffect(() => {
     dispatch(fetchSmurfs());
   }, []);
-
-  if(error) {
-   return <h2>{error}</h2>;
-  }
-
-  if(isFetching) {
-    return <h2>Smurfs are loading</h2>;
-  }
-
+ 
   return (
     <div className="App">
       <Header />
@@ -36,9 +28,7 @@ const App = ({ isFetching, error, dispatch })=> {
 
 const mapStateToProps = state => {
   return {
-    smurfs: state.smurfs,
     isFetching: state.isFetching,
-    error: state.error
   };
 }
 
