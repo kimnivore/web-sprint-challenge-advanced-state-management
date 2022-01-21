@@ -9,7 +9,7 @@ import AddForm from './components/AddForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
-const App = ({ smurfs, isFetching, error, dispatch })=> {
+const App = ({ isFetching, error, dispatch })=> {
 
   useEffect(() => {
     dispatch(fetchSmurfs());
@@ -27,8 +27,8 @@ const App = ({ smurfs, isFetching, error, dispatch })=> {
     <div className="App">
       <Header />
       <main>
-        <SmurfList/>
-        <AddForm/>
+        <SmurfList />
+        <AddForm />
       </main>
     </div>
   );
