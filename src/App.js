@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import AddForm from './components/AddForm';
-import SmurfList from './components/SmurfList';
 import Header from './components/Header';
+import SmurfList from './components/SmurfList';
+import AddForm from './components/AddForm';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
