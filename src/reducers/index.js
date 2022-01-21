@@ -8,7 +8,14 @@ export const initialState = {
           position:'Village Leader',
           nickname: 'Pops',
           description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
-        }
+        },
+        {
+            id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+            name:'Poppa Smurf',
+            position:'Village Leader',
+            nickname: 'Pops',
+            description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+          },
       ],
     isFetching: false,
     error: ''
@@ -35,7 +42,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 smurfs: {},
                 isFetching: false,
-                error: ''
+                error: action.payload
             };
         case ADD_SMURF:
             const newSmurf = {
@@ -47,12 +54,18 @@ const reducer = (state = initialState, action) => {
             };
             return {
                 ...state,
-                smurfs: [...state.smurfs, newSmurf]
+                smurfs: [...state.smurfs, newSmurf],
+                isFetching: false,
+                error: ''
             };
         case ERROR:
+            const newError = 'There is an error.';
             return {
-
-            }
+                ...state,
+                smurfs: {},
+                isFetching: false,
+                error: newError
+            };
         default:
             return state;
     }
